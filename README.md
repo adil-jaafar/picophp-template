@@ -15,7 +15,7 @@ picoPHP is a minimalistic yet powerful PHP framework designed for rapid developm
 1.  **Installation:**  Use Composer to install picoPHP.
 
     ```bash
-    composer require adil-jaafar/picophp:*
+    composer create-project adil-jaafar/picophp-template your-app-name
     ```
 
 2.  **Directory Structure:**  Organize your application code within the `app` directory.
