@@ -2,6 +2,7 @@
     "name": "adil-jaafar/picophp-template",
     "description": "Projet de démarrage avec PicoPHP",
     "type": "project",
+    "license": "MIT",
     "require": {
         "adil-jaafar/picophp": "^1.0"
     },
