@@ -1,0 +1,22 @@
+# Composer
+/vendor/
+/composer.lock
+
+# Cache / logs / sessions
+/cache/
+/logs/
+/sessions/
+
+# IDE / éditeurs
+/.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Systèmes
+.DS_Store
+Thumbs.db
+
+# OS / env
+.env
+.env.local

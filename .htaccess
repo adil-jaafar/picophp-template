@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Si la requête est vide ("/"), renvoyer public/index.html si il existe
+    RewriteCond %{REQUEST_URI} ^/$
+    RewriteCond %{DOCUMENT_ROOT}/public/index.html -f
+    RewriteRule ^$ public/index.html [L]
+
+    # Si la requête correspond à un fichier dans /public, le servir
+    RewriteCond %{DOCUMENT_ROOT}/public/%{REQUEST_URI} -f
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Sinon, passer par index.php (routeur PHP)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+
+
+</IfModule>
+
