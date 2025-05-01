@@ -2,14 +2,12 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>picoPHP - Micro Framework</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <style>
         .typing::after {
             content: "|";
@@ -25,112 +23,103 @@
     </style>
 </head>
 
-<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen px-4">
 
-    <div class="text-center max-w-4xl">
-        <div class="mt-8">
+    <div class="text-center max-w-4xl w-full">
+
+        <!-- Header -->
+        <div class="mt-12">
+            <h1 class="text-4xl font-bold">
+                🚀 <span class="text-blue-400">P</span><span id="prefix" class="text-blue-400 typing"></span>PHP
+            </h1>
+            <p id="subtitle" class="text-lg text-gray-300 mt-2">Le micro-framework PHP ultra-léger.</p>
+            <a href="https://github.com/adil-jaafar/picophp" target="_blank"
+                class="inline-flex items-center mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow transition">
+                <i class="fab fa-github mr-2"></i> Voir sur GitHub
+            </a>
+        </div>
+
+        <!-- Bloc Installation -->
+        <div class="mt-12">
             <h2 class="text-2xl font-semibold mb-4">
-                <i class="fa fa-rocket mr-2"></i>
-                Démarrage Rapide
+                <i class="fa fa-terminal mr-2"></i>
+                Installation
             </h2>
-            <p class="text-gray-300">
-                Créez un fichier <code>app/index/routes.php</code> avec le code suivant :
-            </p>
-            <pre class="text-left bg-gray-800 rounded-md p-4 mt-2 text-sm">
-                <code class="language-php">
+            <p class="text-gray-300">Installez une nouvelle application avec le template officiel :</p>
+            <pre
+                class="bg-gray-800 rounded-md p-4 mt-2 text-sm text-left"><code>composer create-project adil-jaafar/picophp-template your-app-name</code></pre>
+            <p class="text-gray-400 mt-2">Remplacez <code>your-app-name</code> par le nom de votre projet.</p>
+        </div>
+
+        <!-- Quick Start -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-semibold mb-4"><i class="fa fa-rocket mr-2"></i>Démarrage Rapide</h2>
+            <p class="text-gray-300">Créez un fichier <code>app/index/routes.php</code> avec le code suivant :</p>
+            <pre class="text-left bg-gray-800 rounded-md p-4 mt-2 text-sm overflow-x-auto">
+<code class="language-php">
 &lt;?php
 
 $get = function(Response $response) {
     return $response(200)->html("&lt;h1&gt;Hello, picoPHP!&lt;/h1&gt;");
 };
-                </code>
-            </pre>
-            <p class="text-gray-300 mt-2">
-                Et voilà ! Accédez à <code>/index</code> dans votre navigateur pour voir le résultat.
-            </p>
+</code>
+      </pre>
+            <p class="text-gray-300 mt-2">Et voilà ! Accédez à <code>/index</code> dans votre navigateur pour voir le
+                résultat.</p>
         </div>
 
-        <div class="text-center mt-12">
-            <h1 class="text-4xl font-bold">
-                🚀 <span class="text-blue-400">P</span><span id="prefix" class="text-blue-400 typing"></span>PHP
-            </h1>
-            <p id="subtitle" class="text-lg text-gray-300 mt-2">Le micro-framework PHP ultra-léger.</p>
-        </div>
-
-
-        <div class="mt-12">
-            <h2 class="text-2xl font-semibold mb-4">
-                <i class="fa fa-star mr-2"></i>
-                Fonctionnalités Clés
-            </h2>
-
+        <!-- Features -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-semibold mb-4"><i class="fa fa-star mr-2"></i>Fonctionnalités Clés</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Feature Cards -->
                 <div class="p-4 bg-gray-800 rounded-md">
-                    <h3 class="text-xl font-semibold mb-2">
-                        <i class="fa fa-code-branch mr-1"></i>
-                        File-Based Routing
-                    </h3>
+                    <h3 class="text-xl font-semibold mb-2"><i class="fa fa-code-branch mr-1"></i>File-Based Routing</h3>
                     <p class="text-gray-300">Définissez vos routes simplement en créant des fichiers
-                        <code>routes.php</code> dans la structure de votre application.</p>
+                        <code>routes.php</code>.</p>
                 </div>
-
                 <div class="p-4 bg-gray-800 rounded-md">
-                    <h3 class="text-xl font-semibold mb-2">
-                        <i class="fa fa-link mr-1"></i>
-                        Dependency Injection
-                    </h3>
-                    <p class="text-gray-300">Accédez facilement aux services (Request, Response, Env, DB, etc.) grâce à
-                        l'injection de dépendances.</p>
+                    <h3 class="text-xl font-semibold mb-2"><i class="fa fa-link mr-1"></i>Dependency Injection</h3>
+                    <p class="text-gray-300">Accès facile aux services via l’injection de dépendances.</p>
                 </div>
-
                 <div class="p-4 bg-gray-800 rounded-md">
-                    <h3 class="text-xl font-semibold mb-2">
-                        <i class="fa fa-route mr-1"></i>
-                        Path Parameters
-                    </h3>
-                    <p class="text-gray-300">Capturez facilement les segments dynamiques de l'URL en tant que
-                        paramètres.</p>
+                    <h3 class="text-xl font-semibold mb-2"><i class="fa fa-route mr-1"></i>Path Parameters</h3>
+                    <p class="text-gray-300">Capturez les segments dynamiques des URL comme paramètres.</p>
                 </div>
-
                 <div class="p-4 bg-gray-800 rounded-md">
-                    <h3 class="text-xl font-semibold mb-2">
-                        <i class="fa fa-filter mr-1"></i>
-                        Middleware
-                    </h3>
-                    <p class="text-gray-300">Implémentez une logique réutilisable avant et après les gestionnaires de
-                        routes.</p>
+                    <h3 class="text-xl font-semibold mb-2"><i class="fa fa-filter mr-1"></i>Middleware</h3>
+                    <p class="text-gray-300">Logique réutilisable avant/après les gestionnaires de routes.</p>
                 </div>
             </div>
         </div>
 
-        <div class="mt-12">
-            <h2 class="text-2xl font-semibold mb-4">
-                <i class="fa fa-flask mr-2"></i>
-                Exemples
-            </h2>
+        <!-- Examples -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-semibold mb-4"><i class="fa fa-flask mr-2"></i>Exemples</h2>
 
-            <div class="p-4 bg-gray-800 rounded-md">
-                <h3 class="text-xl font-semibold mb-2">Accès à la base de données</h3>
-                <p class="text-gray-400 mb-2">Fichier: <code>app/users/routes.php</code></p>
-                <pre class="text-left text-sm">
-                    <code class="language-php">
+            <div class="space-y-8">
+                <!-- DB Example -->
+                <div class="p-4 bg-gray-800 rounded-md">
+                    <h3 class="text-xl font-semibold mb-2">Accès à la base de données</h3>
+                    <p class="text-gray-400 mb-2">Fichier : <code>app/users/routes.php</code></p>
+                    <pre class="text-left text-sm overflow-x-auto">
+<code class="language-php">
 &lt;?php
 
 $get = function(DB $db, Response $response) {
-    $users = $db->query('SELECT * FROM users');
+    $users = $db->fetchAll('SELECT * FROM users');
     return $response(200)->json($users);
 };
-                    </code>
-                </pre>
-                <p class="text-gray-400 mt-2">Fonction <code>$get</code> qui récupère les utilisateurs de la base de
-                    données.</p>
-            </div>
+</code>
+          </pre>
+                </div>
 
-            <div class="p-4 bg-gray-800 rounded-md mt-4">
-                <h3 class="text-xl font-semibold mb-2">Middleware d'authentification</h3>
-                <p class="text-gray-400 mb-2">Fichier: <code>app/middleware.php</code></p>
-                <pre class="text-left text-sm">
-                    <code class="language-php">
+                <!-- Middleware Example -->
+                <div class="p-4 bg-gray-800 rounded-md">
+                    <h3 class="text-xl font-semibold mb-2">Middleware d'authentification</h3>
+                    <p class="text-gray-400 mb-2">Fichier : <code>app/middleware.php</code></p>
+                    <pre class="text-left text-sm overflow-x-auto">
+<code class="language-php">
 &lt;?php
 
 $before = [
@@ -142,54 +131,38 @@ $before = [
 ];
 
 function isAuthenticated(Request $request): bool {
-  //TODO replace by a real auth check
+  // TODO: replace with real auth
   $token = $request->headers("authorization");
   return $token === "Bearer mysecrettoken";
 }
-                    </code>
-                </pre>
-                <p class="text-gray-400 mt-2">Middleware <code>$before</code> qui vérifie l'authentification avant
-                    d'autoriser l'accès aux routes.</p>
-            </div>
+</code>
+          </pre>
+                </div>
 
-            <div class="p-4 bg-gray-800 rounded-md mt-4">
-                <h3 class="text-xl font-semibold mb-2">Récupérer des paramètres de l'URL</h3>
-                <p class="text-gray-400 mb-2">Fichier: <code>app/product/[id]/routes.php</code></p>
-                <pre class="text-left text-sm">
-                    <code class="language-php">
+                <!-- Path Example -->
+                <div class="p-4 bg-gray-800 rounded-md">
+                    <h3 class="text-xl font-semibold mb-2">Récupérer des paramètres de l'URL</h3>
+                    <p class="text-gray-400 mb-2">Fichier : <code>app/product/[id]/routes.php</code></p>
+                    <pre class="text-left text-sm overflow-x-auto">
+<code class="language-php">
 &lt;?php
 
 $get = function(Path $path, Response $response) {
   $productId = $path['id'];
   return $response(200)->json(['product_id' => $productId]);
 };
-                    </code>
-                </pre>
-                <p class="text-gray-400 mt-2">Récupère l'id du product dans l'URL <code>/product/123</code></p>
+</code>
+          </pre>
+                </div>
             </div>
         </div>
 
-        <div class="mt-12">
-            <h2 class="text-2xl font-semibold mb-4">
-                <i class="fa fa-download mr-2"></i>
-                Installation
-            </h2>
-            <p class="text-gray-300">
-                Utilisez Composer pour installer picoPHP :
-            </p>
-            <pre class="text-left bg-gray-800 rounded-md p-4 mt-2 text-sm">
-                <code class="language-php">
-composer require adil-jaafar/picophp:*
-                </code>
-            </pre>
-        </div>
-
-        <div class="mt-12">
-            <p class="text-gray-500">
-                Développé avec ❤️ par [Votre Nom ou Organisation]
+        <!-- Footer Signature -->
+        <div class="mt-16 mb-8">
+            <p class="text-gray-500 text-sm italic">
+                picoPHP — 🧠 moitié neurones, moitié silicium ✨, 100% efficace — by Jaafar
             </p>
         </div>
-
     </div>
 
     <script>
@@ -269,7 +242,6 @@ composer require adil-jaafar/picophp:*
 
         cycleText(); // Démarrer l'animation
     </script>
-
 </body>
 
 </html>
