@@ -132,7 +132,7 @@ $before = [
 
 function isAuthenticated(Request $request): bool {
   // TODO: replace with real auth
-  $token = $request->headers("authorization");
+  $token = $request->header("authorization");
   return $token === "Bearer mysecrettoken";
 }
 </code>
